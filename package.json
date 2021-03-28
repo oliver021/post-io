@@ -1,0 +1,75 @@
+{
+  "name": "post-io",
+  "version": "1.0.0",
+  "description": "The signalR connection monitor and debuger to test, debug and show signalR flow",
+  "main": "src/main/main.ts",
+  "scripts": {
+    "start": "react-scripts start",
+    "build:win": "react-scripts build",
+    "build:linux": "react-scripts build",
+    "build:mac": "react-scripts build",
+    "build:web": "cross-env BUILD_PATH=./dist/ react-scripts build",
+    "build:main": "tsc -p ./src-main",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "npm run build:main && npx electron dist/main.js",
+    "electron:dev": "concurrently \"cross-env BROWSER=\"void\" npm start\"  \"cross-env ELECTRON_START_URL=http://localhost:3000/ npm run electron\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliver021/post-io.git"
+  },
+  "keywords": [
+    "sockets",
+    "signalR",
+    "test",
+    "debug",
+    "connection",
+    "realtime"
+  ],
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@microsoft/signalr": "^5.0.4",
+    "electron-debug": "^3.1.0",
+    "electron-log": "^4.2.4",
+    "electron-updater": "^4.3.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "regenerator-runtime": "^0.13.5",
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "14.14.10",
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.12",
+    "concurrently": "file:..\\..\\cloud\\post-io\\node_modules\\concurrently",
+    "cross-env": "^7.0.3",
+    "electron": "^11.0.1",
+    "electron-builder": "^22.3.6",
+    "electron-devtools-installer": "^3.1.1",
+    "electron-notarize": "^1.0.0",
+    "electron-rebuild": "^2.3.2",
+    "husky": "^4.2.5",
+    "react-refresh": "^0.9.0",
+    "react-scripts": "^4.0.3",
+    "react-test-renderer": "^17.0.1"
+  },
+  "author": "Oliver Valiente",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliver021/post-io/issues"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
