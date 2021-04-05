@@ -116,7 +116,7 @@ var createWindow = function () { return __awaiter(void 0, void 0, void 0, functi
                 if (process.env.ELECTRON_START_URL)
                     mainWindow.loadURL(process.env.ELECTRON_START_URL);
                 else
-                    mainWindow.loadURL("file://" + __dirname + "/../ui/index.html");
+                    mainWindow.loadURL("file://" + __dirname + "/index.html");
                 // @TODO: Use 'ready-to-show' event
                 //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
                 mainWindow.webContents.on('did-finish-load', function () {
